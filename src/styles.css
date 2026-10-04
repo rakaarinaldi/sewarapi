@@ -59,7 +59,7 @@ svg.ic{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-wid
 .btn.pri:hover{filter:brightness(1.08);background:var(--pri)}
 .btn.lg{padding:9px 14px}
 
-.content{padding-inline:24px;padding-block:20px 32px;display:flex;flex-direction:column;gap:16px;max-width:1240px;width:100%}
+.content{padding-inline:24px;padding-block:20px 32px;display:flex;flex-direction:column;gap:16px;width:100%}
 .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-width:0}
 .kpi{padding:16px;display:flex;flex-direction:column;gap:6px}
