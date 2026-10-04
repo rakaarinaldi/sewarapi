@@ -1,8 +1,5 @@
 // Data contoh dan pengaturan. Ganti isi file ini untuk menyesuaikan dengan klien.
 
-// Isi nomor WhatsApp Anda (format 628xxxxxxxxxx) agar tombol konsultasi muncul.
-export const KONTAK_WA = '';
-
 export const LOK = [
   { id: 'melati', nama: 'Kos Griya Melati' },
   { id: 'cend', nama: 'Kontrakan Cendrawasih' },

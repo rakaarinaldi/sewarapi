@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { LOK, UNITS, LOG, VIEWS, KONTAK_WA } from './data';
+import { LOK, UNITS, LOG, VIEWS } from './data';
 import { rp, key, namaLok, blnPanjang, hariIni } from './utils';
 import { Icon } from './components/ui';
 import Dashboard from './components/Dashboard';
@@ -101,9 +101,6 @@ export default function App() {
       {badge && v[0] === 'tagihan' && telatSemua > 0 && <b>{telatSemua}</b>}
     </button>
   );
-  const waLink = KONTAK_WA
-    ? `https://wa.me/${KONTAK_WA}?text=${encodeURIComponent('Halo, saya sudah coba demo SewaRapi. Saya mau tanya soal aplikasi untuk kos/kontrakan saya.')}`
-    : null;
 
   return (
     <>
@@ -114,15 +111,12 @@ export default function App() {
             <small>Menu</small>
             {VIEWS.map((v) => <NavBtn key={v[0]} v={v} badge />)}
           </nav>
-          <div className="sidefoot">
-            <strong>Mode demo</strong>Semua nama dan angka di sini adalah data contoh. Perubahan kembali ke awal saat halaman dimuat ulang.
-          </div>
         </aside>
 
         <div className="main">
           <header className="topbar">
             <div className="title">
-              <h1>{VIEWS.find((v) => v[0] === view)[1]}<span className="badge">DEMO · DATA CONTOH</span></h1>
+              <h1>{VIEWS.find((v) => v[0] === view)[1]}</h1>
               <p>{hariIni()}</p>
             </div>
             <select className="field" id="lok" aria-label="Pilih lokasi" value={lok} onChange={(e) => setLok(e.target.value)}>
@@ -146,13 +140,6 @@ export default function App() {
             {view === 'tagihan' && <Tagihan pilih={pilih} filt={filt} setFilt={setFilt} actions={actions} />}
             {view === 'penghuni' && <Penghuni pilih={pilih} actions={actions} />}
 
-            <section className="card cta">
-              <div>
-                <h2>Mau aplikasi seperti ini untuk kos atau kontrakan Anda?</h2>
-                <p>Nama lokasi, jumlah kamar, harga sewa, aturan denda, dan laporan disesuaikan dengan cara Anda mengelola. Bisa dibuka dari HP, tanpa instal apa pun.</p>
-              </div>
-              {waLink && <a className="btn pri lg" href={waLink} target="_blank" rel="noopener">Tanya lewat WhatsApp</a>}
-            </section>
           </main>
         </div>
       </div>
